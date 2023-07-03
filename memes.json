@@ -1,4 +1,4 @@
-data = [
+[
     {
         "ID": 181913649,
         "Name": "Drake Hotline Bling",
@@ -22,7 +22,7 @@ data = [
     {
         "ID": 438680,
         "Name": "Batman Slapping Robin",
-        "Alternate Names": ""
+        "Alternate Names": "None"
     },
     {
         "ID": 124822590,
@@ -47,7 +47,7 @@ data = [
     {
         "ID": 93895088,
         "Name": "Expanding Brain",
-        "Alternate Names": ""
+        "Alternate Names": "None"
     },
     {
         "ID": 102156234,
@@ -87,7 +87,7 @@ data = [
     {
         "ID": 97984,
         "Name": "Disaster Girl",
-        "Alternate Names": ""
+        "Alternate Names": "None"
     },
     {
         "ID": 89370399,
