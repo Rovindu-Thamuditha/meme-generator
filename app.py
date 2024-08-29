@@ -27,10 +27,12 @@ for meme in data:
     alt_names = meme["Alternate Names"]
     meme_list.append((id_value, meme_name))
 
+
 class MyForm(QMainWindow):
     def __init__(self):
         super().__init__()
-        loadUi("design.ui", self)  # Replace "myform.ui" with the path to your .ui file
+        # Replace "myform.ui" with the path to your .ui file
+        loadUi("design.ui", self)
 
         for meme in data:
             id_value = meme["ID"]
@@ -49,7 +51,8 @@ class MyForm(QMainWindow):
         self.image_label = self.findChild(QLabel, "sample_image")
 
         # Set the pixmap and adjust the aspect ratio
-        self.image_label.setPixmap(pixmap.scaled(self.image_label.size(), Qt.AspectRatioMode.KeepAspectRatio))
+        self.image_label.setPixmap(pixmap.scaled(
+            self.image_label.size(), Qt.AspectRatioMode.KeepAspectRatio))
 
         # Maek Button Handler
         self.make_btn.clicked.connect(self.make_meme)
@@ -76,7 +79,8 @@ class MyForm(QMainWindow):
                 print("Meme URL:", meme_url)
 
         elif self.selected_meme_id is None:
-            QMessageBox.information(self, "Message", "Please select a meme to edit.")
+            QMessageBox.information(
+                self, "Message", "Please select a meme to edit.")
 
     def gen_meme(self, template_id, text1, text2):
         api_data = {
@@ -99,7 +103,7 @@ class MyForm(QMainWindow):
                 return generated_meme_url
 
             else:
-                print("Error Occurred!")
+                print(api_response)
 
         else:
             # Request was not successful
@@ -116,9 +120,11 @@ class MyForm(QMainWindow):
             image = QImage.fromData(image_data)
 
             # Set the pixmap and adjust the aspect ratio
-            self.image_label.setPixmap(QPixmap.fromImage(image).scaled(self.image_label.size(), Qt.AspectRatioMode.KeepAspectRatio))
+            self.image_label.setPixmap(QPixmap.fromImage(image).scaled(
+                self.image_label.size(), Qt.AspectRatioMode.KeepAspectRatio))
         else:
             print("Failed to download image from URL:", url)
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
